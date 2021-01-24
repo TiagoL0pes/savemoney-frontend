@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { AuthRequest } from '../models/auth-request';
+import { AuthRequest } from '../models/requests/auth-request';
 
 @Injectable({
   providedIn: 'root'

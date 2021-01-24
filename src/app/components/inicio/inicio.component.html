@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="info-container">
+        <mat-card class="mat-elevation-z4">
+            <mat-card-title>
+                Agência
+            </mat-card-title>
+            <mat-card-content>
+                {{contaBancaria?.agencia}}
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="mat-elevation-z4">
+            <mat-card-title>
+                Conta
+            </mat-card-title>
+            <mat-card-content>
+                {{contaBancaria?.conta}}
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="mat-elevation-z4">
+            <mat-card-title>
+                Saldo
+            </mat-card-title>
+            <mat-card-content>
+                {{contaBancaria?.saldo | currency:'BRL':true}}
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="saldo-container">
+        <mat-card class="mat-elevation-z4">
+            <mat-card-title>
+                Realize uma operação
+            </mat-card-title>
+            <mat-card-content class="saldo-container">
+                <form [formGroup]="saldoForm">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Valor</mat-label>
+                        <input matInput type="text" maxlength="16" formControlName="valor" />
+                        <mat-error *ngIf="saldoForm.controls['valor'].errors?.required">Digite um valor válido
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Descrição</mat-label>
+                        <input matInput type="text" maxlength="16" formControlName="descricao" />
+                    </mat-form-field>
+                </form>
+
+                <div class="action-balance">
+                    <button mat-raised-button class="deposit" [disabled]="saldoForm.invalid"
+                        (click)="depositar()">Depositar</button>
+                    <button mat-raised-button class="withdraw" [disabled]="saldoForm.invalid"
+                        (click)="sacar()">Sacar</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

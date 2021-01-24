@@ -1,0 +1,92 @@
+::ng-deep {
+    .mat-form-field-appearance-outline {
+        .mat-form-field-outline {
+            background-color: #fefefe;
+            border-radius: 5px;
+        }
+    }
+}
+
+.container {
+    height: 100%;
+    padding: 10px;
+    background: linear-gradient(to left, var(--mid-blue), var(--blue));
+
+    .info-container,
+    .saldo-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        padding: 10px 10px 20px 10px;
+
+        mat-card {
+            width: 25%;
+            background: linear-gradient(-150deg, var(--blue), #cecece);
+        }
+    }
+
+    .saldo-container {
+        flex-direction: column;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        mat-card {
+            width: 30%;
+        }
+    }
+
+    .action-balance {
+        width: 201px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-around;
+
+        .deposit,
+        .withdraw {
+            color: #000;
+            font-weight: 400;
+
+            &:disabled {
+                background-color: rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        button {
+            margin-bottom: 10px;
+        }
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    * {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        .info-container,
+        .saldo-container {
+            display: flex-wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+
+            mat-card {
+                margin-bottom: 10px;
+                width: 90%;
+            }
+        }
+    }
+}

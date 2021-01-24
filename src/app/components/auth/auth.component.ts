@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Route } from 'src/app/shared/enums/route.enum';
-import { AuthRequest } from 'src/app/shared/models/auth-request';
+import { AuthRequest } from 'src/app/shared/models/requests/auth-request';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { MessageService } from 'src/app/shared/services/message.service';
 
@@ -29,7 +29,7 @@ export class AuthComponent implements OnInit, OnDestroy {
     const session = JSON.parse(localStorage.getItem('session'));
 
     if (session && Object.keys(session).length > 0) {
-      // this.router.navigate([Route.INICIO]);
+      this.router.navigate([Route.INICIO]);
     } else {
       this.authService.logout();
     }
@@ -43,7 +43,7 @@ export class AuthComponent implements OnInit, OnDestroy {
       .subscribe((res: any) => {
         const session = { token: res.body.token.substring(7) };
         this.authService.addSession(session);
-        // this.router.navigateByUrl(Route.INICIO);
+        this.router.navigateByUrl(Route.INICIO);
       }, handler => this.messagingService.showErrorMessage('Ops', handler?.error?.message));
 
     this.subscriptions.add(obs$);
