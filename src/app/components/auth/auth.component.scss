@@ -1,0 +1,45 @@
+::ng-deep {
+    .mat-form-field-appearance-outline {
+        .mat-form-field-outline {
+            background-color: #fefefe;
+            border-radius: 5px;
+        }
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+        font-weight: 700;
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: stretch;
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .create_account {
+            cursor: pointer;
+            color: blue;
+            margin-top: 10px;
+
+            &:hover {
+                color: var(--blue);
+            }
+        }
+    }
+}
