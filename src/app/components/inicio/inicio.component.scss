@@ -10,7 +10,7 @@
 .container {
     height: 100%;
     padding: 10px;
-    background: linear-gradient(to left, var(--mid-blue), var(--blue));
+    background-color: #9ca3af;
 
     .info-container,
     .saldo-container {
@@ -22,7 +22,28 @@
 
         mat-card {
             width: 25%;
-            background: linear-gradient(-150deg, var(--blue), #cecece);
+            background-color: #374151;
+
+            .agencia {
+                color: #ef4444;
+            }
+
+            .conta {
+                color: #3b82f6;
+            }
+
+            .saldo {
+                color: #f59e0b;
+            }
+
+            mat-card-title,
+            mat-card-content {
+                color: #fefefe;
+
+                form {
+                    color: #000;
+                }
+            }
         }
     }
 
@@ -38,18 +59,30 @@
 
         mat-card {
             width: 30%;
+
+            .operacao {
+                color: #10B981;
+            }
         }
     }
 
-    .action-balance {
+    .acoes-saldo {
         width: 201px;
         display: flex;
         flex-direction: column;
         align-items: stretch;
         justify-content: space-around;
 
-        .deposit,
-        .withdraw {
+        .deposito {
+            background-color: #3b82f6;
+        }
+
+        .saque {
+            background-color: #f59e0b;
+        }
+
+        .deposito,
+        .saque {
             color: #000;
             font-weight: 400;
 
@@ -61,12 +94,6 @@
         button {
             margin-bottom: 10px;
         }
-    }
-
-    .actions {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
     }
 
     * {

@@ -1,0 +1,45 @@
+.navigation {
+    height: 100vh;
+    background-color: #9ca3af;
+
+    .sidenav {
+        background-color: #1f2937;
+        width: 250px;
+
+        a {
+            color: #fefefe;
+        }
+
+        mat-icon {
+            padding-right: 10px;
+        }
+
+        .label {
+            display: inline-block;
+            line-height: 30px;
+            margin: 0;
+            width: 85%;
+        }
+    }
+
+    .content {
+        mat-toolbar {
+            background-color: #111827;
+            color: #fefefe;
+        }
+
+        main {
+            height: calc(100vh - 84px);
+        }
+
+        .pointer {
+            cursor: pointer;
+
+            &:hover {
+                position: relative;
+                top: -2px;
+                left: 2px;
+            }
+        }
+    }
+}

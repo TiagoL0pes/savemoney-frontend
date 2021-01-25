@@ -1,26 +1,26 @@
 <div class="container">
     <div class="info-container">
         <mat-card class="mat-elevation-z4">
-            <mat-card-title>
+            <mat-card-title class="agencia">
                 Agência
             </mat-card-title>
-            <mat-card-content>
+            <mat-card-content class="agencia">
                 {{contaBancaria?.agencia}}
             </mat-card-content>
         </mat-card>
         <mat-card class="mat-elevation-z4">
-            <mat-card-title>
+            <mat-card-title class="conta">
                 Conta
             </mat-card-title>
-            <mat-card-content>
+            <mat-card-content class="conta">
                 {{contaBancaria?.conta}}
             </mat-card-content>
         </mat-card>
         <mat-card class="mat-elevation-z4">
-            <mat-card-title>
+            <mat-card-title class="saldo">
                 Saldo
             </mat-card-title>
-            <mat-card-content>
+            <mat-card-content class="saldo">
                 {{contaBancaria?.saldo | currency:'BRL':true}}
             </mat-card-content>
         </mat-card>
@@ -28,7 +28,7 @@
     <mat-divider></mat-divider>
     <div class="saldo-container">
         <mat-card class="mat-elevation-z4">
-            <mat-card-title>
+            <mat-card-title class="operacao">
                 Realize uma operação
             </mat-card-title>
             <mat-card-content class="saldo-container">
@@ -45,10 +45,10 @@
                     </mat-form-field>
                 </form>
 
-                <div class="action-balance">
-                    <button mat-raised-button class="deposit" [disabled]="saldoForm.invalid"
+                <div class="acoes-saldo">
+                    <button mat-raised-button class="deposito" [disabled]="saldoForm.invalid"
                         (click)="depositar()">Depositar</button>
-                    <button mat-raised-button class="withdraw" [disabled]="saldoForm.invalid"
+                    <button mat-raised-button class="saque" [disabled]="saldoForm.invalid"
                         (click)="sacar()">Sacar</button>
                 </div>
             </mat-card-content>

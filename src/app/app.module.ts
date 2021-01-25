@@ -10,12 +10,18 @@ import { AuthComponent } from './components/auth/auth.component';
 import { InterceptorsModule } from './shared/interceptors/interceptors.module';
 import { MaterialModule } from './shared/material/material/material.module';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { ContentComponent } from './components/template/content/content.component';
+import { ToolbarComponent } from './components/template/toolbar/toolbar.component';
+import { NavigationComponent } from './components/template/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    InicioComponent
+    InicioComponent,
+    ContentComponent,
+    ToolbarComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

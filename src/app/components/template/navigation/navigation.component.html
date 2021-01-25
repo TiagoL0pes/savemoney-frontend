@@ -1,0 +1,38 @@
+<mat-sidenav-container class="navigation">
+    <mat-sidenav class="sidenav" #sidenav role="navigation">
+        <mat-nav-list>
+            <a mat-list-item [routerLink]="['/despesas']" (click)="sidenav.toggle()">
+                <mat-icon>
+                    list_alt
+                </mat-icon>
+                <span class="label">Despesas</span>
+            </a>
+            <a mat-list-item [routerLink]="['/cartoes/credito']" (click)="sidenav.toggle()">
+                <mat-icon>
+                    credit_card
+                </mat-icon>
+                <span class="label">Crédito</span>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <mat-toolbar>
+            <div *ngIf="!isAuth()">
+                <button *ngIf="isHome(); else goBack" mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <ng-template #goBack>
+                    <button mat-icon-button (click)="previous()">
+                        <mat-icon>west</mat-icon>
+                    </button>
+                </ng-template>
+            </div>
+            <div class="pointer" [routerLink]="!isAuth() ? ['/inicio'] : ['/auth']">
+                <span>Save Money</span>
+            </div>
+        </mat-toolbar>
+        <main>
+            <app-content></app-content>
+        </main>
+    </mat-sidenav-content>
+</mat-sidenav-container>
