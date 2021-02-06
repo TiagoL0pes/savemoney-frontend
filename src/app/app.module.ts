@@ -13,6 +13,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ContentComponent } from './components/template/content/content.component';
 import { ToolbarComponent } from './components/template/toolbar/toolbar.component';
 import { NavigationComponent } from './components/template/navigation/navigation.component';
+import { NoContentComponent } from './components/shared/no-content/no-content.component';
+import { MonthPaginatorComponent } from './components/shared/month-paginator/month-paginator.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { NavigationComponent } from './components/template/navigation/navigation
     InicioComponent,
     ContentComponent,
     ToolbarComponent,
-    NavigationComponent
+    NavigationComponent,
+    NoContentComponent,
+    MonthPaginatorComponent
   ],
   imports: [
     BrowserModule,

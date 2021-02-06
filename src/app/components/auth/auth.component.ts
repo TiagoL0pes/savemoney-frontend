@@ -20,7 +20,8 @@ export class AuthComponent implements OnInit, OnDestroy {
     private router: Router,
     private authService: AuthService,
     private messagingService: MessageService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private messageService: MessageService
   ) {
     this.subscriptions = new Subscription();
   }

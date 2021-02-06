@@ -13,6 +13,12 @@
                 </mat-icon>
                 <span class="label">Crédito</span>
             </a>
+            <a mat-list-item [routerLink]="['/cartoes/credito']" (click)="sidenav.toggle()">
+                <mat-icon>
+                    logout
+                </mat-icon>
+                <span class="label" (click)="logout()">Sair</span>
+            </a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">

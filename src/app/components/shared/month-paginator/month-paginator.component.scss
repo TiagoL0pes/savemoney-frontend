@@ -1,0 +1,49 @@
+.container {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px #000;
+    background: linear-gradient(45deg, #121212, var(--mid-blue));
+    color: #fefefe;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    span {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    mat-icon {
+        cursor: pointer;
+
+        &:active {
+            position: relative;
+            top: 1px;
+            left: 1px;
+        }
+    }
+
+    .anterior {
+        &:hover {
+            border-radius: 100%;
+            box-shadow: -1px 1px;
+        }
+
+        &:active {
+            box-shadow: -2px 2px;
+        }
+    }
+
+    .proximo {
+        &:hover {
+            border-radius: 100%;
+            box-shadow: 1px 1px;
+        }
+
+        &:active {
+            box-shadow: 2px 2px;
+        }
+    }
+}
