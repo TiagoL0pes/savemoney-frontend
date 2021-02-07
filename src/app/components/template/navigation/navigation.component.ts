@@ -34,7 +34,7 @@ export class NavigationComponent implements OnInit {
     this.router.navigateByUrl(Route.AUTH);
   }
 
-  back(): void {
+  voltar(): void {
     window.history.back();
   }
 

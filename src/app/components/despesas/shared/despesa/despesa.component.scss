@@ -1,0 +1,73 @@
+::ng-deep {
+    .mat-form-field-appearance-outline {
+        .mat-form-field-outline {
+            background-color: #fefefe;
+            border-radius: 5px;
+        }
+    }
+}
+
+.container {
+    height: calc(100vh - 168px);
+    margin: 10px;
+    padding: 10px;
+
+    .title {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .adicionar {
+        &:enabled {
+            background: linear-gradient(-45deg, #121212, var(--blue500));
+            color: #fefefe;
+        }
+
+        &:disabled {
+            background-color: rgba(0, 0, 0, 0.12);
+        }
+    }
+
+    mat-card-content {
+        width: 100%;
+
+        form {
+            width: 100%;
+
+            mat-form-field {
+                width: 100%;
+            }
+        }
+    }
+
+    mat-card-footer {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        button {
+            margin-left: 10px;
+        }
+
+        .pagar {
+            background-color: var(--blue500);
+        }
+
+        .remover {
+            background-color: var(--red500);
+        }
+
+        .remover,
+        .pagar {
+            color: #fefefe;
+            font-weight: 400;
+
+            &:disabled {
+                background-color: rgba(0, 0, 0, 0.12);
+            }
+        }
+    }
+}

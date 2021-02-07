@@ -1,0 +1,7 @@
+<app-despesa 
+    [despesaForm]="despesaForm"
+    [title]="title"
+    [statusPagamento]="statusPagamento"
+    (pagamentoAction)="pagar($event)"
+    (removerAction)="remover($event)">
+</app-despesa>

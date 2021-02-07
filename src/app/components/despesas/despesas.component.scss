@@ -1,0 +1,63 @@
+.container {
+    margin: 10px;
+    padding: 10px;
+
+    .title {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    button {
+        background: linear-gradient(-45deg, #121212, var(--blue500));
+        color: #F9FAFB;
+    }
+
+    .loading {
+        margin-top: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    mat-table {
+        width: 100%;
+        cursor: pointer;
+
+        mat-header-row {
+            background: linear-gradient(-45deg, #121212, var(--blue500));
+        }
+
+        mat-header-cell {
+            color: #fefefe;
+        }
+
+        mat-row {
+            font-weight: 500;
+
+            &:hover {
+                background-color: #039be50d;
+            }
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+    }
+
+    mat-paginator {
+        background: linear-gradient(45deg, #111827, var(--blue500));
+        color: #fefefe;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        .loading {
+            margin-top: 50%;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<div class="container">
+    <mat-card-title class="title">
+        <span>{{title}}</span>
+        <button *ngIf="!ocultarAoEditar" [disabled]="despesaForm.invalid" mat-raised-button class="adicionar" (click)="execute()"
+            [matTooltip]="title">{{actionButton}}</button>
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="despesaForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Data da Compra</mat-label>
+                <input [disabled]="ocultarAoEditar" matInput [matDatepicker]="calendarioDataEntrada"
+                    placeholder="Selecione a data de compra" formControlName="dataEntrada">
+                <mat-datepicker-toggle matSuffix [for]="calendarioDataEntrada"></mat-datepicker-toggle>
+                <mat-datepicker #calendarioDataEntrada></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Data de Vencimento</mat-label>
+                <input [disabled]="ocultarAoEditar" matInput [matDatepicker]="calendarioDataVencimento"
+                    placeholder="Selecione a data de vencimento" formControlName="dataVencimento">
+                <mat-datepicker-toggle matSuffix [for]="calendarioDataVencimento"></mat-datepicker-toggle>
+                <mat-datepicker #calendarioDataVencimento></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" *ngIf="ocultarAoEditar && despesaForm.value.dataPagamento !== null">
+                <mat-label>Data de Pagamento</mat-label>
+                <input [readonly]="ocultarAoEditar" matInput type="date" formControlName="dataPagamento" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Descrição</mat-label>
+                <input [readonly]="ocultarAoEditar" matInput type="text" formControlName="descricao" />
+                <mat-error>Escreva uma descrição</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Valor</mat-label>
+                <input [readonly]="ocultarAoEditar" matInput type="number" formControlName="valor" />
+                <mat-error>Informe o valor da despesa</mat-error>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-footer>
+        <button *ngIf="ocultarAoEditar && !despesaEstaPaga()" mat-raised-button class="remover" (click)="remover()"
+            matTooltip="Remover Despesa">Remover</button>
+        <button *ngIf="ocultarAoEditar && !despesaEstaPaga()" mat-raised-button class="pagar" (click)="pagar()"
+            matTooltip="Pagar Despesa">Pagar</button>
+    </mat-card-footer>
+</div>

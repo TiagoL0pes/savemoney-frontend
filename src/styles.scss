@@ -1,9 +1,28 @@
+:root {
+    --blue500: #3b82f6;
+    --purple600: #7c3aed;
+    --green500: #10b981;
+    --yellow300: #fcd34d;
+    --yellow600: #D97706;
+    --red500: #EF4444;
+}
+
 html,
 body {
+    margin: 0 auto;
     height: 100%;
+    max-width: 1600px;
 }
 
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.pendente {
+    background-color: var(--yellow300);
+}
+
+.pago {
+    background-color: var(--green500);
 }
