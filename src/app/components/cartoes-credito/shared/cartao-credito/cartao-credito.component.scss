@@ -8,7 +8,6 @@
 }
 
 .container {
-    height: calc(100vh - 168px);
     margin: 10px;
     padding: 10px;
 
@@ -19,7 +18,7 @@
         justify-content: space-between;
     }
 
-    .adicionar {
+    .add {
         &:enabled {
             background: linear-gradient(-45deg, #121212, var(--blue500));
             color: var(--white);
@@ -49,25 +48,29 @@
         justify-content: flex-end;
 
         button {
+            min-width: 130px;
             margin-left: 10px;
-        }
-
-        .pagar {
-            background-color: var(--blue500);
         }
 
         .remover {
             background-color: var(--red500);
-        }
-
-        .remover,
-        .pagar {
             color: var(--white);
             font-weight: 400;
+        }
+    }
+}
 
-            &:disabled {
-                background-color: rgba(0, 0, 0, 0.12);
-            }
+@media only screen and (max-width: 768px) {
+    .container {
+        mat-card-footer {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        button {
+            margin-bottom: 10px;
         }
     }
 }

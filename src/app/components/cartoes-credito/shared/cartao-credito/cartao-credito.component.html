@@ -1,0 +1,38 @@
+<div class="container">
+    <mat-card-title class="title">
+        <span>{{title}}</span>
+        <button *ngIf="!exibirAoEditar" [disabled]="cartaoForm.invalid" mat-raised-button class="add"
+            (click)="execute()" [matTooltip]="title">{{actionButton}}</button>
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="cartaoForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Número do Cartão</mat-label>
+                <input [readonly]="exibirAoEditar" matInput type="text" maxlength="16" formControlName="numero" />
+                <mat-error *ngIf="cartaoForm.controls['numero'].errors?.required">Escreva o número do cartão de crédito
+                </mat-error>
+                <mat-error *ngIf="cartaoForm.controls['numero'].errors?.minlength">O cartão deve ter 16 dígitos
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Dia de Vencimento</mat-label>
+                <input [readonly]="exibirAoEditar" matInput type="text" maxlength="2" pattern="\d*"
+                    formControlName="diaVencimento" />
+                <mat-error *ngIf="cartaoForm.controls['diaVencimento'].errors?.required">Dia de vencimento é obrigatório
+                </mat-error>
+                <mat-error *ngIf="cartaoForm.controls['diaVencimento'].errors?.pattern">Digite apenas números
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Limite de Crédito</mat-label>
+                <input [readonly]="exibirAoEditar" matInput type="number" formControlName="limiteCredito" />
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-footer>
+        <button *ngIf="!exibirAoEditar" mat-raised-button class="remover" matTooltip="Remover Cartão"
+            (click)="remover()">Remover</button>
+    </mat-card-footer>
+</div>

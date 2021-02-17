@@ -1,7 +1,7 @@
 ::ng-deep {
     .mat-form-field-appearance-outline {
         .mat-form-field-outline {
-            background-color: #fefefe;
+            background-color: var(--white);
             border-radius: 5px;
         }
     }
@@ -41,7 +41,7 @@
 
             mat-card-title,
             mat-card-content {
-                color: #fefefe;
+                color: var(--white);
 
                 form {
                     color: #000;

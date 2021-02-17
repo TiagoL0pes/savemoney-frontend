@@ -22,6 +22,11 @@ import { DespesaComponent } from './components/despesas/shared/despesa/despesa.c
 import { AdicionarDespesaComponent } from './components/despesas/adicionar-despesa/adicionar-despesa.component';
 import { DetalharDespesaComponent } from './components/despesas/detalhar-despesa/detalhar-despesa.component';
 import { EditarDespesaComponent } from './components/despesas/editar-despesa/editar-despesa.component';
+import { CartoesCreditoComponent } from './components/cartoes-credito/cartoes-credito.component';
+import { CartaoCreditoComponent } from './components/cartoes-credito/shared/cartao-credito/cartao-credito.component';
+import { AdicionarCartaoComponent } from './components/cartoes-credito/adicionar-cartao/adicionar-cartao.component';
+import { DetalharCartaoComponent } from './components/cartoes-credito/detalhar-cartao/detalhar-cartao.component';
+import { EditarCartaoComponent } from './components/cartoes-credito/editar-cartao/editar-cartao.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,12 @@ import { EditarDespesaComponent } from './components/despesas/editar-despesa/edi
     DespesaComponent,
     AdicionarDespesaComponent,
     DetalharDespesaComponent,
-    EditarDespesaComponent
+    EditarDespesaComponent,
+    CartoesCreditoComponent,
+    CartaoCreditoComponent,
+    AdicionarCartaoComponent,
+    DetalharCartaoComponent,
+    EditarCartaoComponent
   ],
   imports: [
     BrowserModule,

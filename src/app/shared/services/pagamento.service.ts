@@ -25,7 +25,7 @@ export class PagamentoService {
 
   criarFormulario(payment: PagamentoRequest, formBuilder: FormBuilder): FormGroup {
     return formBuilder.group({
-      idCartao: [payment.idCartao]
+      idCartao: [payment.idCartaoCredito]
     });
   }
 

@@ -1,7 +1,7 @@
 ::ng-deep {
     .mat-form-field-appearance-outline {
         .mat-form-field-outline {
-            background-color: #fefefe;
+            background-color: var(--white);
             border-radius: 5px;
         }
     }
@@ -35,7 +35,7 @@
 
                 button {
                     background-color: #2563EB;
-                    color: #fefefe;
+                    color: var(--white);
                     font-weight: 300;
 
                     &:disabled {

@@ -1,7 +1,7 @@
 export class PagamentoRequest {
-    idCartao: string;
+    idCartaoCredito: string;
 
-    constructor(idCartao?) {
-        this.idCartao = idCartao;
+    constructor(idCartaoCredito?) {
+        this.idCartaoCredito = idCartaoCredito;
     }
 }

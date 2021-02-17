@@ -1,0 +1,57 @@
+<div (window:resize)="onResize($event)" class="container">
+    <mat-card-title class="title">
+        <span>Cartões</span>
+        <button mat-raised-button color="primary" [routerLink]="['adicionar/cartao']"
+            matTooltip="Adicionar cartão">Adicionar</button>
+    </mat-card-title>
+    <mat-card-content>
+        <mat-table #table [dataSource]="dataSource" class="mat-elevation-z4">
+            <ng-container matColumnDef="numero">
+                <mat-header-cell *matHeaderCellDef>Número</mat-header-cell>
+                <mat-cell *matCellDef="let cartao"> {{cartao.numero}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="diaVencimento">
+                <mat-header-cell *matHeaderCellDef>Dia de Vencimento</mat-header-cell>
+                <mat-cell *matCellDef="let cartao"> {{cartao.diaVencimento}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="limiteCredito">
+                <mat-header-cell *matHeaderCellDef>Limite</mat-header-cell>
+                <mat-cell *matCellDef="let cartao"> {{cartao.limiteCredito | currency:'BRL':true}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="limiteDisponivel">
+                <mat-header-cell *matHeaderCellDef>Disponível</mat-header-cell>
+                <mat-cell *matCellDef="let cartao"> {{cartao.limiteDisponivel | currency:'BRL':true}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+                <mat-cell *matCellDef="let cartao" class="actions">
+                    <mat-icon color="basic" [routerLink]="['editar', cartao.idCartaoCredito]"
+                        matTooltip="Editar cartão">
+                        edit
+                    </mat-icon>
+                    <mat-icon class="faturas" [routerLink]="[cartao.idCartaoCredito, 'faturas']"
+                        matTooltip="Abrir faturas">
+                        menu_book
+                    </mat-icon>
+                    <mat-icon class="itens" [routerLink]="['/item/cartao', cartao.idCartaoCredito]"
+                        matTooltip="Listar itens do cartão">description</mat-icon>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"
+                [routerLink]="['detalhar', row.idCartaoCredito]"></mat-row>
+        </mat-table>
+
+        <app-no-content *ngIf="dataSource?.totalElements === 0" message="Não há cartões para exibir">
+        </app-no-content>
+
+        <mat-paginator #paginator [length]="dataSource?.totalElements" [pageIndex]="0" [pageSize]="10"
+            [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+    </mat-card-content>
+</div>

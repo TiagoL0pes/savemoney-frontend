@@ -11,14 +11,7 @@
 
     button {
         background: linear-gradient(-45deg, #121212, var(--blue500));
-        color: #f9fafb;
-    }
-
-    .loading {
-        margin-top: 350px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        color: var(--white);
     }
 
     mat-table {
@@ -31,11 +24,19 @@
 
         mat-header-cell {
             color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        mat-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
         }
 
         mat-row {
-            font-weight: 500;
-
             &:hover {
                 background-color: #039be50d;
             }
@@ -45,19 +46,19 @@
             display: flex;
             align-items: center;
             justify-content: space-around;
+
+            .faturas {
+                color: var(--red500);
+            }
+
+            .itens {
+                color: var(--green700);
+            }
         }
     }
 
     mat-paginator {
         background: linear-gradient(45deg, #111827, var(--blue500));
         color: var(--white);
-    }
-}
-
-@media only screen and (max-width: 768px) {
-    .container {
-        .loading {
-            margin-top: 50%;
-        }
     }
 }
