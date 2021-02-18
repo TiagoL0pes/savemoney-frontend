@@ -27,6 +27,11 @@ import { CartaoCreditoComponent } from './components/cartoes-credito/shared/cart
 import { AdicionarCartaoComponent } from './components/cartoes-credito/adicionar-cartao/adicionar-cartao.component';
 import { DetalharCartaoComponent } from './components/cartoes-credito/detalhar-cartao/detalhar-cartao.component';
 import { EditarCartaoComponent } from './components/cartoes-credito/editar-cartao/editar-cartao.component';
+import { ItensCartaoComponent } from './components/cartoes-credito/itens-cartao/itens-cartao.component';
+import { AdicionarItemComponent } from './components/cartoes-credito/itens-cartao/adicionar-item/adicionar-item.component';
+import { DetalharItemComponent } from './components/cartoes-credito/itens-cartao/detalhar-item/detalhar-item.component';
+import { EditarItemComponent } from './components/cartoes-credito/itens-cartao/editar-item/editar-item.component';
+import { ItemCartaoComponent } from './components/cartoes-credito/shared/item-cartao/item-cartao.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +52,12 @@ import { EditarCartaoComponent } from './components/cartoes-credito/editar-carta
     CartaoCreditoComponent,
     AdicionarCartaoComponent,
     DetalharCartaoComponent,
-    EditarCartaoComponent
+    EditarCartaoComponent,
+    ItensCartaoComponent,
+    AdicionarItemComponent,
+    DetalharItemComponent,
+    EditarItemComponent,
+    ItemCartaoComponent
   ],
   imports: [
     BrowserModule,

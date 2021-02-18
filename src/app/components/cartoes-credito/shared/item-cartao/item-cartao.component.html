@@ -1,0 +1,40 @@
+<div class="container">
+    <mat-card-title class="title">
+        <span>{{title}}</span>
+        <button *ngIf="!ocultarAoDetalhar" [disabled]="itemForm.invalid" mat-raised-button class="add"
+            (click)="execute()" [matTooltip]="title">{{actionButton}}</button>
+    </mat-card-title>
+    <mat-card-content>
+        <form [formGroup]="itemForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Data da Compra</mat-label>
+                <input [disabled]="ocultarAoDetalhar" matInput [matDatepicker]="compraDatePicker"
+                    placeholder="Selecione a data de compra" formControlName="dataCompra">
+                <mat-datepicker-toggle matSuffix [for]="compraDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #compraDatePicker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Descrição</mat-label>
+                <input [readonly]="ocultarAoDetalhar" matInput type="text" formControlName="descricao" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Valor</mat-label>
+                <input [readonly]="ocultarAoDetalhar" matInput type="number" formControlName="valor" />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Número de parcelas</mat-label>
+                <input [readonly]="ocultarAoDetalhar" matInput type="number" formControlName="numeroParcelas" />
+            </mat-form-field>
+        </form>
+        <div>
+            {{ valor }}
+        </div>
+    </mat-card-content>
+    <mat-card-footer>
+        <button *ngIf="mostrarAoEditar" mat-raised-button color="warn" matTooltip="Remover Cartão"
+            (click)="remover()">Remover</button>
+    </mat-card-footer>
+</div>

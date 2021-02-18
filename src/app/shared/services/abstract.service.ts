@@ -15,7 +15,7 @@ export abstract class AbstractService {
       .set('size', filter.size)
       .set('sort', filter.sort)
       .set('direction', filter.direction)
-      .set('month', `${filter.mes + 1}`)
-      .set('year', `${filter.ano}`);
+      .set('mes', `${filter.mes + 1}`)
+      .set('ano', `${filter.ano}`);
   }
 }

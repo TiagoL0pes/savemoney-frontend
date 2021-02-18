@@ -2,7 +2,7 @@ import { ItemCartao } from './item-cartao';
 
 export class ResumoItemCartao {
     idCartaoCredito: number;
-    valor: number;
+    valorTotal: number;
     totalItens: number;
     itens: ItemCartao[];
 

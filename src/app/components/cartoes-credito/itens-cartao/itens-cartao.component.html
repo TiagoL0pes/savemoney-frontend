@@ -1,0 +1,55 @@
+<div class="container">
+    <mat-card-title class="title">
+        <span>Compras</span>
+        <button mat-raised-button color="primary" matTooltip="Adicionar parcela"
+            [routerLink]="['adicionar/item/cartao']">Adicionar</button>
+    </mat-card-title>
+    <mat-card-content>
+        <app-month-paginator [mes]="mes" [ano]="ano" (anteriorAction)="anterior($event)"
+            (proximoAction)="proximo($event)">
+        </app-month-paginator>
+
+        <mat-accordion>
+            <mat-expansion-panel hideToggle *ngFor="let item of resumo?.itens">
+                <mat-expansion-panel-header class="header-item-align">
+                    <mat-panel-title class="descricao-item">
+                        {{item.descricao}}
+                    </mat-panel-title>
+                    <mat-panel-description class="descricao-item">
+                        <mat-icon [routerLink]="['detalhar/item/cartao', item.idItemCartao]">
+                            remove_red_eye
+                        </mat-icon>
+                        <mat-icon [routerLink]="['editar/item/cartao', item.idItemCartao]">
+                            edit
+                        </mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div *ngFor="let parcela of item.parcelas">
+                    <mat-card class="mat-elevation-z0">
+                        <mat-card-title>
+                            <p>{{parcela.descricao}}</p>
+                        </mat-card-title>
+                        <mat-card-content>
+                            <p><span class="bold">Data da Compra:</span> {{item.dataCompra | date: 'dd/MM/yyyy'}}</p>
+                            <p><span class="bold">Data de Vencimento:</span>
+                                {{parcela.dataVencimento | date: 'dd/MM/yyyy'}}</p>
+                            <p *ngIf="estaPago(parcela.status)"><span class="bold">Data de Pagamento:</span>
+                                {{parcela.dataPagamento | date: 'dd/MM/yyyy'}}</p>
+                            <p><span class="bold">Valor da Parcela:</span> {{parcela.valor | currency:'BRL':true}}
+                            </p>
+                            <p><span class="bold">Status:</span> {{getStatusPagamento(parcela.status)}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-divider></mat-divider>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+        <app-no-content *ngIf="resumo?.itens?.length === 0" message="Não há itens para exibir">
+        </app-no-content>
+
+        <div class="total-despesas" *ngIf="resumo?.itens?.length > 0">
+            <button mat-raised-button disabled>Total: {{ resumo?.valorTotal | currency:'BRL':true}}</button>
+        </div>
+    </mat-card-content>
+</div>

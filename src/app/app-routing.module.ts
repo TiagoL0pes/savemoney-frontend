@@ -5,6 +5,10 @@ import { AdicionarCartaoComponent } from './components/cartoes-credito/adicionar
 import { CartoesCreditoComponent } from './components/cartoes-credito/cartoes-credito.component';
 import { DetalharCartaoComponent } from './components/cartoes-credito/detalhar-cartao/detalhar-cartao.component';
 import { EditarCartaoComponent } from './components/cartoes-credito/editar-cartao/editar-cartao.component';
+import { AdicionarItemComponent } from './components/cartoes-credito/itens-cartao/adicionar-item/adicionar-item.component';
+import { DetalharItemComponent } from './components/cartoes-credito/itens-cartao/detalhar-item/detalhar-item.component';
+import { EditarItemComponent } from './components/cartoes-credito/itens-cartao/editar-item/editar-item.component';
+import { ItensCartaoComponent } from './components/cartoes-credito/itens-cartao/itens-cartao.component';
 import { AdicionarDespesaComponent } from './components/despesas/adicionar-despesa/adicionar-despesa.component';
 import { DespesasComponent } from './components/despesas/despesas.component';
 import { DetalharDespesaComponent } from './components/despesas/detalhar-despesa/detalhar-despesa.component';
@@ -64,6 +68,28 @@ const routes: Routes = [
       {
         path: Route.EDITAR_CARTAO_CREDITO,
         component: EditarCartaoComponent
+      },
+    ]
+  },
+  {
+    path: Route.ITEM_CARTAO,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: ItensCartaoComponent
+      },
+      {
+        path: Route.ADICIONAR_ITEM_CARTAO,
+        component: AdicionarItemComponent
+      },
+      {
+        path: Route.DETALHAR_ITEM_CARTAO,
+        component: DetalharItemComponent
+      },
+      {
+        path: Route.EDITAR_ITEM_CARTAO,
+        component: EditarItemComponent
       },
     ]
   },

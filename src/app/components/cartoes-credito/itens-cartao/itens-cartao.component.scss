@@ -1,0 +1,60 @@
+.container {
+    margin: 10px;
+    padding: 10px;
+
+    .title {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    button {
+        background: linear-gradient(-45deg, #121212, var(--blue500));
+        color: var(--white);
+    }
+
+    .header-item-align {
+        background: linear-gradient(-45deg, #121212, var(--blue500));
+
+        &:hover {
+            background-color: var(--blue500);
+        }
+    }
+
+    .descricao-item {
+        color: var(--white);
+
+        mat-icon {
+            margin-left: 10px;
+
+            &:hover {
+                color: var(--yellow300);
+            }
+        }
+    }
+
+    mat-card {
+        margin: 10px 0;
+    }
+
+    .bold {
+        font-weight: 700;
+    }
+
+    .total-despesas {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: 500;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        button {
+            cursor: auto;
+            color: var(--white);
+            background-color: var(--blue500);
+        }
+    }
+}
