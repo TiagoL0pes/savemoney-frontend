@@ -50,7 +50,7 @@
         <app-no-content *ngIf="dataSource?.totalElements === 0" message="Não há cartões para exibir">
         </app-no-content>
 
-        <mat-paginator #paginator [length]="dataSource?.totalElements" [pageIndex]="0" [pageSize]="10"
+        <mat-paginator *ngIf="dataSource?.totalElements > 0" #paginator [length]="dataSource?.totalElements" [pageIndex]="0" [pageSize]="10"
             [pageSizeOptions]="[5, 10, 25, 100]">
         </mat-paginator>
     </mat-card-content>

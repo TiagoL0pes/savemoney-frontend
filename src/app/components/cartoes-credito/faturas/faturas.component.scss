@@ -1,3 +1,12 @@
+::ng-deep {
+    .mat-form-field-appearance-outline {
+        .mat-form-field-outline {
+            background-color: var(--white);
+            border-radius: 5px;
+        }
+    }
+}
+
 .container {
     margin: 10px;
     padding: 10px;
@@ -7,11 +16,23 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        button {
+            background: linear-gradient(to right, var(--black), var(--blue500));
+            color: var(--white);
+        }
     }
 
-    button {
-        background: linear-gradient(-45deg, var(--black), var(--blue500));
-        color: var(--white);
+    .form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+
+        mat-form-field {
+            width: 120px;
+            margin-left: 10px;
+        }
     }
 
     mat-table {
@@ -47,12 +68,16 @@
             align-items: center;
             justify-content: space-around;
 
-            .faturas {
-                color: var(--red500);
+            .view {
+                color: var(--dark-blue);
             }
 
-            .itens {
-                color: var(--green700);
+            .pagar {
+                color: var(--dark-green);
+            }
+
+            .atualizar {
+                color: var(--dark-red);
             }
         }
     }

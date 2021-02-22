@@ -1,13 +1,13 @@
 export class ItemCartaoRequest {
     dataCompra: string;
     descricao: string;
-    valor: number;
+    valorTotal: number;
     numeroParcelas: number;
 
-    constructor(dataCompra?, descricao?, valor?, installmentsNumber?) {
+    constructor(dataCompra?, descricao?, valorTotal?, installmentsNumber?) {
         this.dataCompra = dataCompra;
         this.descricao = descricao;
-        this.valor = valor;
+        this.valorTotal = valorTotal;
         this.numeroParcelas = installmentsNumber;
     }
 }

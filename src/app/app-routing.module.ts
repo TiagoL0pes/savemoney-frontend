@@ -5,6 +5,7 @@ import { AdicionarCartaoComponent } from './components/cartoes-credito/adicionar
 import { CartoesCreditoComponent } from './components/cartoes-credito/cartoes-credito.component';
 import { DetalharCartaoComponent } from './components/cartoes-credito/detalhar-cartao/detalhar-cartao.component';
 import { EditarCartaoComponent } from './components/cartoes-credito/editar-cartao/editar-cartao.component';
+import { FaturasComponent } from './components/cartoes-credito/faturas/faturas.component';
 import { AdicionarItemComponent } from './components/cartoes-credito/itens-cartao/adicionar-item/adicionar-item.component';
 import { DetalharItemComponent } from './components/cartoes-credito/itens-cartao/detalhar-item/detalhar-item.component';
 import { EditarItemComponent } from './components/cartoes-credito/itens-cartao/editar-item/editar-item.component';
@@ -69,6 +70,10 @@ const routes: Routes = [
         path: Route.EDITAR_CARTAO_CREDITO,
         component: EditarCartaoComponent
       },
+      {
+        path: Route.FATURA,
+        component: FaturasComponent
+      }
     ]
   },
   {

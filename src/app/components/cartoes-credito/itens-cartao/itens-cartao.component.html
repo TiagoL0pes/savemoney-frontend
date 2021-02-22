@@ -33,11 +33,11 @@
                             <p><span class="bold">Data da Compra:</span> {{item.dataCompra | date: 'dd/MM/yyyy'}}</p>
                             <p><span class="bold">Data de Vencimento:</span>
                                 {{parcela.dataVencimento | date: 'dd/MM/yyyy'}}</p>
-                            <p *ngIf="estaPago(parcela.status)"><span class="bold">Data de Pagamento:</span>
+                            <p *ngIf="estaPago(parcela.statusPagamento)"><span class="bold">Data de Pagamento:</span>
                                 {{parcela.dataPagamento | date: 'dd/MM/yyyy'}}</p>
                             <p><span class="bold">Valor da Parcela:</span> {{parcela.valor | currency:'BRL':true}}
                             </p>
-                            <p><span class="bold">Status:</span> {{getStatusPagamento(parcela.status)}}</p>
+                            <p><span class="bold">Status:</span> {{getStatusPagamento(parcela.statusPagamento)}}</p>
                         </mat-card-content>
                     </mat-card>
                     <mat-divider></mat-divider>

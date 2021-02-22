@@ -1,0 +1,28 @@
+<div mat-dialog-content class="container">
+    <div class="title">
+        <h1 mat-dialog-title>Parcelas</h1>
+        <mat-icon (click)="fechar()"> close</mat-icon>
+    </div>
+    <div *ngFor="let parcela of data">
+        <mat-card class="mat-elevation-z0">
+            <mat-card-title>
+                <p>{{parcela.descricao}}</p>
+            </mat-card-title>
+            <mat-card-content>
+                <p>
+                    <span class="bold">Data de Vencimento:</span>
+                    {{parcela.dataVencimento | date: 'dd/MM/yyyy'}}
+                </p>
+                <p>
+                    <span class="bold">Valor da Parcela:</span>
+                    {{parcela.valor | currency:'BRL':true}}
+                </p>
+                <p>
+                    <span class="bold">Status:</span>
+                    {{getStatusPagamento(parcela.statusPagamento)}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+        <mat-divider></mat-divider>
+    </div>
+</div>

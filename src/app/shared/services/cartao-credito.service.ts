@@ -81,12 +81,12 @@ export class CartaoCreditoService extends AbstractService {
     });
   }
 
-  criarFormularioItemCartao(cartao: ItemCartaoRequest, formBuilder: FormBuilder): FormGroup {
+  criarFormularioItemCartao(item: ItemCartaoRequest, formBuilder: FormBuilder): FormGroup {
     return formBuilder.group({
-      dataCompra: [cartao.dataCompra, Validators.required],
-      descricao: [cartao.descricao, Validators.maxLength(20)],
-      valor: [cartao.valor, Validators.required],
-      numeroParcelas: [cartao.numeroParcelas, Validators.required],
+      dataCompra: [item.dataCompra, Validators.required],
+      descricao: [item.descricao, Validators.maxLength(20)],
+      valorTotal: [item.valorTotal, Validators.required],
+      numeroParcelas: [item.numeroParcelas, Validators.required],
     });
   }
 }

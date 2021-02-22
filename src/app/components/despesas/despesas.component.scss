@@ -10,7 +10,7 @@
     }
 
     button {
-        background: linear-gradient(-45deg, #121212, var(--blue500));
+        background: linear-gradient(-45deg,var(--black), var(--blue500));
         color: #f9fafb;
     }
 
@@ -26,7 +26,7 @@
         cursor: pointer;
 
         mat-header-row {
-            background: linear-gradient(-45deg, #121212, var(--blue500));
+            background: linear-gradient(-45deg,var(--black), var(--blue500));
         }
 
         mat-header-cell {
@@ -49,7 +49,7 @@
     }
 
     mat-paginator {
-        background: linear-gradient(45deg, #111827, var(--blue500));
+        background: linear-gradient(45deg, var(--black), var(--blue500));
         color: var(--white);
     }
 }

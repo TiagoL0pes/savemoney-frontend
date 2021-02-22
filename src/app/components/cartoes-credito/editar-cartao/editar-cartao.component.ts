@@ -6,6 +6,7 @@ import { Route } from 'src/app/shared/enums/route.enum';
 import { CartaoCredito } from 'src/app/shared/models/cartao-credito';
 import { CartaoCreditoService } from 'src/app/shared/services/cartao-credito.service';
 import { MessageService } from 'src/app/shared/services/message.service';
+import { SweetAlertResult } from 'sweetalert2';
 
 @Component({
   selector: 'app-editar-cartao',
@@ -49,6 +50,20 @@ export class EditarCartaoComponent implements OnInit, OnDestroy {
         this.router.navigateByUrl(Route.CARTAO_CREDITO);
       }, handler => this.messageService.showErrorMessage('Ops', handler.error.message));
     this.subscriptions.add(obs$);
+  }
+
+  remover(event) {
+    this.messageService.showConfirmDialog('Remover Cartão', 'Tem certeza que você deseja remover esse cartão ?', 'Sim, remover!')
+      .subscribe((res: SweetAlertResult) => {
+        if (res.value === true) {
+          const obs$ = this.cartaoCreditoService.remover(this.idCartaoCredito)
+            .subscribe(() => {
+              this.messageService.showSuccessMessage('Cartão removido com sucesso!');
+              this.router.navigateByUrl(Route.CARTAO_CREDITO);
+            }, handler => this.messageService.showErrorMessage('Ops', handler.error.message));
+          this.subscriptions.add(obs$);
+        }
+      }, error => console.error(error));
   }
 
   ngOnDestroy(): void {

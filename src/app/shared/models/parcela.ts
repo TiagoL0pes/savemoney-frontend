@@ -5,5 +5,5 @@ export class Parcela {
     descricao: string;
     dataPagamento: string;
     dateVencimento: string;
-    status: string;
+    statusPagamento: string;
 }

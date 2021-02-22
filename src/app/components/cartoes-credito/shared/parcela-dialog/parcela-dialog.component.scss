@@ -1,0 +1,29 @@
+::ng-deep.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.container {
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blue500);
+
+    .title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        mat-icon {
+            cursor: pointer;
+
+            &:hover {
+                color: var(--red500);
+            }
+        }
+    }
+}
+
+.container > * {
+    width: 100%;
+}

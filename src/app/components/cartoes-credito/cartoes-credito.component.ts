@@ -39,7 +39,7 @@ export class CartoesCreditoComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.paginator.page
+    this.paginator?.page
       .pipe(
         tap(() => this.dataSource.buscarCartoesCredito(
           new Filter(
